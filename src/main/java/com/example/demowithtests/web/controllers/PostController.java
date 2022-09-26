@@ -4,7 +4,7 @@ import com.example.demowithtests.domain.Employee;
 import com.example.demowithtests.dto.createDto.EmployeeAdminDto;
 import com.example.demowithtests.dto.createDto.EmployeeDto;
 import com.example.demowithtests.service.Service;
-import com.example.demowithtests.util.config.EmployeeConverter;
+import com.example.demowithtests.util.config.orika.EmployeeConverter;
 import com.example.demowithtests.web.interfaces.post.PostAdminRequest;
 import com.example.demowithtests.web.interfaces.post.PostRequest;
 

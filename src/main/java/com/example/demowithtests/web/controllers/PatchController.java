@@ -6,7 +6,7 @@ import com.example.demowithtests.dto.updateDto.EmployeeUpdateIsDeleted;
 import com.example.demowithtests.dto.updateDto.EmployeeUpdateNameDto;
 import com.example.demowithtests.service.Service;
 
-import com.example.demowithtests.util.config.EmployeeConverter;
+import com.example.demowithtests.util.config.orika.EmployeeConverter;
 import com.example.demowithtests.web.interfaces.patch.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;

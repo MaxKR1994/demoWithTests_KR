@@ -3,7 +3,7 @@ package com.example.demowithtests.web.controllers;
 import com.example.demowithtests.domain.Employee;
 import com.example.demowithtests.dto.updateDto.EmployeeUpdateDto;
 import com.example.demowithtests.service.Service;
-import com.example.demowithtests.util.config.EmployeeConverter;
+import com.example.demowithtests.util.config.orika.EmployeeConverter;
 import com.example.demowithtests.web.interfaces.put.PutRefreshRequest;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
