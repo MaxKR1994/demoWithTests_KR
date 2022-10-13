@@ -98,4 +98,12 @@ public class Employee {
     public void setDeleted(Boolean deleted) {
         isDeleted = deleted;
     }
+
+    public SecurityCard getCard() {
+        return card;
+    }
+
+    public void setCard(SecurityCard card) {
+        this.card = card;
+    }
 }
