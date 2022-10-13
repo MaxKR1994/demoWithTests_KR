@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "card")
+@Table(name = "cards")
 public class SecurityCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
