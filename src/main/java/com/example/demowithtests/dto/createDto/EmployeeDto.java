@@ -18,4 +18,5 @@ public class EmployeeDto {
     public Integer age;
 
     public Set<AddressDto> addresses = new HashSet<>();
+    public SecurityCardDto card;
 }

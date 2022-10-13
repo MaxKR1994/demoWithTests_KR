@@ -1,6 +1,7 @@
 package com.example.demowithtests.dto.readDto;
 
 import com.example.demowithtests.dto.createDto.AddressDto;
+import com.example.demowithtests.dto.createDto.SecurityCardDto;
 import lombok.*;
 
 import java.util.HashSet;
@@ -18,4 +19,5 @@ public class EmployeeReadAllDto {
     public String email;
     public Integer age;
     public Set<AddressDto> addresses = new HashSet<>();
+    public SecurityCardDto card;
 }

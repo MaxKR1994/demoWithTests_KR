@@ -19,4 +19,5 @@ public class EmployeeAdminDto {
     public Boolean isAdult;
     public Boolean isDeleted;
     public Set<AddressDto> addresses = new HashSet<>();
+    public SecurityCardDto card;
 }
