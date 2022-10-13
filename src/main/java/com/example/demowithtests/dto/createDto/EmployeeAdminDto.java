@@ -2,6 +2,9 @@ package com.example.demowithtests.dto.createDto;
 
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @Builder
@@ -15,4 +18,5 @@ public class EmployeeAdminDto {
     public Integer age;
     public Boolean isAdult;
     public Boolean isDeleted;
+    public Set<AddressDto> addresses = new HashSet<>();
 }
