@@ -24,9 +24,13 @@ public class Employee {
     private String email;
     private Integer age;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "employee_id")
     private Set<Address> addresses = new HashSet<>();
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id")
+    private SecurityCard card;
 
     private Boolean isAdult;
     private Boolean isDeleted = Boolean.FALSE;
