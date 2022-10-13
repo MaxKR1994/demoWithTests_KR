@@ -30,7 +30,7 @@ public class ServiceBean implements Service {
 
     @Override
     public Employee create(Employee employee) {
-        employee.setIsAdult(employee.getAge() >= 18);
+        employee.setAdult(employee.getAge() >= 18);
         return repository.save(employee);
     }
 
@@ -50,7 +50,7 @@ public class ServiceBean implements Service {
         Employee employee = repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Employee not found with id = " + id));
         //.orElseThrow(ResourceNotFoundException::new);
-        if (employee.getIsDeleted()) {
+        if (employee.getDeleted()) {
             throw new EntityNotFoundException("Employee was deleted with id = " + id);
         }
         return employee;
@@ -121,7 +121,7 @@ public class ServiceBean implements Service {
     public Employee hideEmployee(Integer id) {
         Employee employee = repository.findById(id)
                 .orElseThrow(ResourceWasDeletedException::new);
-        employee.setIsDeleted(true);
+        employee.setDeleted(true);
         repository.save(employee);
         return employee;
     }
