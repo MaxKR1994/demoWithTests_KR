@@ -5,4 +5,5 @@ public class AddressDto {
     public Boolean addressHasActive = Boolean.TRUE;
     public String city;
     public String street;
+    public String postalCode;
 }
