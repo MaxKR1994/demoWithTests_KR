@@ -30,6 +30,9 @@ public class Employee {
     @JoinColumn(name = "employee_id")
     private SecurityCard card;
 
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
     private Boolean isAdult;
     private Boolean isDeleted = Boolean.FALSE;
 
@@ -105,4 +108,11 @@ public class Employee {
         this.card = card;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
 }

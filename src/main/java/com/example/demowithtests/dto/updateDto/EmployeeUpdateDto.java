@@ -1,5 +1,6 @@
 package com.example.demowithtests.dto.updateDto;
 
+import com.example.demowithtests.domain.Gender;
 import lombok.*;
 
 @Getter
@@ -12,4 +13,5 @@ public class EmployeeUpdateDto {
     public String name;
     public String country;
     public Integer age;
+    public Gender gender;
 }
