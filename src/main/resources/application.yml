@@ -17,7 +17,7 @@ spring:
     generate-ddl: true
 # Liquibase configuration
   liquibase:
-    enabled: false
+    enabled: true
 # Server configuration
 server:
   port: 8089 #set your port
