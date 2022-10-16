@@ -10,6 +10,7 @@ create table public.users (
                               foreign key (employee_id) references public.cards (id)
                                   match simple on update no action on delete no action
 );
+create unique index users_id_uindex on users using btree (id);
 
 create table public.addresses (
                                   id bigint primary key not null default nextval('addresses_id_seq'::regclass),
