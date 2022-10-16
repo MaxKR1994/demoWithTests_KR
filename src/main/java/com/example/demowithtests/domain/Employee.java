@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Setter
 @Builder
 public class Employee {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
