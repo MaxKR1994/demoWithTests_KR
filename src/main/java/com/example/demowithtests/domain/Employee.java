@@ -105,4 +105,5 @@ public class Employee {
     public void setCard(SecurityCard card) {
         this.card = card;
     }
+
 }
