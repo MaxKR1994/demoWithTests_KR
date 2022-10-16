@@ -1,6 +1,11 @@
 package com.example.demowithtests.dto.readDto;
 
+import com.example.demowithtests.dto.createDto.AddressDto;
+import com.example.demowithtests.dto.createDto.SecurityCardDto;
 import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -15,4 +20,6 @@ public class EmployeeReadAllByIsDeletedDto {
     public String email;
     public Integer age;
     public Boolean isDeleted;
+    public Set<AddressDto> addresses = new HashSet<>();
+    public SecurityCardDto card;
 }
