@@ -13,10 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import javax.persistence.EntityNotFoundException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
@@ -168,7 +165,7 @@ public class ServiceBean implements Service {
     }
 
     @Override
-    public List<String> getEmployeeSortCountry() {
+    public List<String> getEmployeesBySortCountry() {
         var employeeCountryList = jpqlRepository.findCountry();
         return employeeCountryList.stream()
                 .filter(c->c.startsWith("U"))
@@ -176,7 +173,7 @@ public class ServiceBean implements Service {
     }
 
     @Override
-    public Optional<String> getEmail() {
+    public Optional<String> getEmployeeByGmail() {
         var employeeEmailList = jpqlRepository.findEmail();
         var emails = employeeEmailList.stream()
                 .filter(e->e.endsWith("gmail.com"))
@@ -186,7 +183,7 @@ public class ServiceBean implements Service {
     }
 
     @Override
-    public List<Integer> getAge() {
+    public List<Integer> getEmployeesAge() {
         var employeeAgeList = jpqlRepository.findAge();
         var age = employeeAgeList.stream()
                 .filter(a->a >= 21)
@@ -197,14 +194,31 @@ public class ServiceBean implements Service {
     }
 
     @Override
-    public Optional<Employee> getEmployeeByAgeAndByEmail() {
+    public List<Employee> getEmployeesByName(String name) {
         var employeeList = sqlRepository.findAll();
-        var ageAndEmails = employeeList.stream()
-                .filter(e->e.getEmail().endsWith("gmail.com") && e.getAge()>=21)
-                .findAny()
-                .orElse(Employee.builder().build());
-        return Optional.of(ageAndEmails);
+        var filterList = employeeList.stream()
+                .filter(employee -> employee.getName().equals(name))
+                .collect(Collectors.toList());
+        return filterList;
     }
+
+    @Override
+    public Set<String> getListOfCountry() {
+        var employeeList = repository.findAll();
+        var countryList = employeeList.stream()
+                .map(Employee::getCountry)
+                .collect(Collectors.toSet());
+        return countryList;
+    }
+
+    @Override
+    public Optional<Employee> getOldestEmployee() {
+        var employeeList = repository.findAll();
+        var oldestEmployee = employeeList.stream()
+                .max(Comparator.comparing(Employee::getAge));
+        return oldestEmployee;
+    }
+
 
     /**
      * It takes a list of strings and a string and returns a list of Sort.Order objects
