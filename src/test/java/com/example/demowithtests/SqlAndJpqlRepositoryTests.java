@@ -36,10 +36,10 @@
 //    public void getGmailUsersTest() {
 //        Employee testEmployee = Employee.builder().email("max@gmail.com").build();
 //        repository.save(testEmployee);
-//        List<Employee> employeesTestList = sqlRepository.findEmployeeByEmail(testEmployee.getEmail());
+//        List<Employee> employeesTestList = sqlRepository.findEmployeeByEmail(testEmployee.getEmployeeByGmail());
 //
 //        assertThat(employeesTestList.size()).isGreaterThan(0);
-//        assertEquals("max@gmail.com",employeesTestList.get(0).getEmail());
+//        assertEquals("max@gmail.com",employeesTestList.get(0).getEmployeeByGmail());
 //    }
 //
 //    @Test

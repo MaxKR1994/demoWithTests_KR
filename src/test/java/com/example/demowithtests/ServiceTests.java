@@ -91,10 +91,10 @@ import com.example.demowithtests.repository.Repository;
 //        List<Employee> testEmployeeList = new ArrayList<>();
 //        testEmployeeList.add(testEmployee);
 //
-//        when(sqlRepository.findEmployeeByEmail(testEmployee.getEmail())).thenReturn(testEmployeeList);
-//        List<Employee> expectedTestEmployeeList = service.findEmployeeByEmail(testEmployee.getEmail());
+//        when(sqlRepository.findEmployeeByEmail(testEmployee.getEmployeeByGmail())).thenReturn(testEmployeeList);
+//        List<Employee> expectedTestEmployeeList = service.findEmployeeByEmail(testEmployee.getEmployeeByGmail());
 //
-//        assertThat(expectedTestEmployeeList.get(0).getEmail()).isEqualTo("max@gmail.com");
+//        assertThat(expectedTestEmployeeList.get(0).getEmployeeByGmail()).isEqualTo("max@gmail.com");
 //    }
 //
 //    @Test
