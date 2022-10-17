@@ -169,6 +169,6 @@ public class GetController implements GetAllRequest,
     @ResponseStatus(HttpStatus.OK)
     // This is a method that returns a list of ages.
     public Set<String> getListOfName() {
-        return service.getListOfName();
+        return service.getListOfEmployeesName();
     }
 }

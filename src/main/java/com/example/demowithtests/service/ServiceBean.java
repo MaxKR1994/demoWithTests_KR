@@ -220,7 +220,7 @@ public class ServiceBean implements Service {
     }
 
     @Override
-    public Set<String> getListOfName() {
+    public Set<String> getListOfEmployeesName() {
         var employeeList = repository.findAll();
         var nameList = employeeList.stream()
                 .map(Employee::getName)

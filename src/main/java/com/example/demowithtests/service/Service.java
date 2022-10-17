@@ -214,5 +214,5 @@ public interface Service {
      *
      * @return A set of strings.
      */
-    Set<String> getListOfName ();
+    Set<String> getListOfEmployeesName();
 }
