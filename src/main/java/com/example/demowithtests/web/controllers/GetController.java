@@ -164,4 +164,11 @@ public class GetController implements GetAllRequest,
     public Optional<Employee> getOldestEmployee() {
         return service.getOldestEmployee();
     }
+
+    @GetMapping(value ="users/stream/nameList")
+    @ResponseStatus(HttpStatus.OK)
+    // This is a method that returns a list of ages.
+    public Set<String> getListOfName() {
+        return service.getListOfName();
+    }
 }
