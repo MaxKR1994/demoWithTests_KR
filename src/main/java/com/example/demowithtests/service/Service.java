@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface Service {
 
@@ -175,23 +176,32 @@ public interface Service {
      *
      * @return A list of countries.
      */
-    List<String> getEmployeeSortCountry();
+    List<String> getEmployeesBySortCountry();
     /**
      * Returns a list of emails, or an empty list if there are no emails.
      *
      * @return Optional<String>
      */
-    Optional<String> getEmail();
+    Optional<String> getEmployeeByGmail();
     /**
      * GetAge returns a list of integers.
      *
      * @return An ArrayList of Integers
      */
-    List<Integer> getAge();
+    List<Integer> getEmployeesAge();
+
     /**
-     * Get an employee by age and by email.
+     * This function returns a list of employees whose name matches the given name.
      *
-     * @return Optional<Employee>
+     * @param name The name of the employee.
+     * @return A list of employees with the given name.
      */
-    Optional<Employee> getEmployeeByAgeAndByEmail();
+    List<Employee> getEmployeesByName(String name);
+    /**
+     * This function returns a set of strings that contains the names of all the countries in the world.
+     *
+     * @return A set of strings.
+     */
+    Set<String> getListOfCountry ();
+    Optional<Employee> getOldestEmployee();
 }
