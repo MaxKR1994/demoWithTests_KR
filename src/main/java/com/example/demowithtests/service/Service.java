@@ -203,5 +203,10 @@ public interface Service {
      * @return A set of strings.
      */
     Set<String> getListOfCountry ();
+    /**
+     * Return the oldest employee, or null if there are no employees.
+     *
+     * @return Optional<Employee>
+     */
     Optional<Employee> getOldestEmployee();
 }
