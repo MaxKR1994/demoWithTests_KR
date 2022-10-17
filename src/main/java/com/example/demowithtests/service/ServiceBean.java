@@ -219,6 +219,15 @@ public class ServiceBean implements Service {
         return oldestEmployee;
     }
 
+    @Override
+    public Set<String> getListOfName() {
+        var employeeList = repository.findAll();
+        var nameList = employeeList.stream()
+                .map(Employee::getName)
+                .collect(Collectors.toSet());
+        return nameList;
+    }
+
 
     /**
      * It takes a list of strings and a string and returns a list of Sort.Order objects
