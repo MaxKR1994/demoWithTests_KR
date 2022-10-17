@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 @AllArgsConstructor
@@ -126,27 +127,41 @@ public class GetController implements GetAllRequest,
     @ResponseStatus(HttpStatus.OK)
     // This is a method that returns a list of countries.
     public List<String> getEmployeeCountry() {
-        return service.getEmployeeSortCountry();
+        return service.getEmployeesBySortCountry();
     }
 
     @GetMapping(value ="users/email")
     @ResponseStatus(HttpStatus.OK)
     // This is a method that returns a list of emails.
     public Optional<String> getEmail() {
-        return service.getEmail();
+        return service.getEmployeeByGmail();
     }
 
     @GetMapping(value ="users/age")
     @ResponseStatus(HttpStatus.OK)
     // This is a method that returns a list of ages.
     public List<Integer> getAge() {
-        return service.getAge();
+        return service.getEmployeesAge();
     }
 
-    @GetMapping(value ="users/ageAndEmail")
+    @GetMapping(value ="users/stream/name")
     @ResponseStatus(HttpStatus.OK)
-    // This is a method that returns a list of employees by age and email.
-    public Optional<Employee> getByAgeAndByEmail() {
-        return service.getEmployeeByAgeAndByEmail();
+    // This is a method that returns a list of ages.
+    public List<Employee> getEmployeesByName(@RequestParam(value = "name") String name) {
+        return service.getEmployeesByName(name);
+    }
+
+    @GetMapping(value ="users/stream/countryList")
+    @ResponseStatus(HttpStatus.OK)
+    // This is a method that returns a list of ages.
+    public Set<String> getListOfCountry() {
+        return service.getListOfCountry();
+    }
+
+    @GetMapping(value ="users/stream/oldestEmployee")
+    @ResponseStatus(HttpStatus.OK)
+    // This is a method that returns a list of ages.
+    public Optional<Employee> getOldestEmployee() {
+        return service.getOldestEmployee();
     }
 }
