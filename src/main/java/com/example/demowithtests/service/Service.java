@@ -209,4 +209,10 @@ public interface Service {
      * @return Optional<Employee>
      */
     Optional<Employee> getOldestEmployee();
+    /**
+     * This function returns a set of strings.
+     *
+     * @return A set of strings.
+     */
+    Set<String> getListOfName ();
 }
