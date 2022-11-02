@@ -2,6 +2,7 @@ package com.example.demowithtests.web.controllers;
 
 import com.example.demowithtests.domain.Employee;
 import com.example.demowithtests.dto.readDto.*;
+import com.example.demowithtests.service.EmployeeDetailsService;
 import com.example.demowithtests.service.Service;
 import com.example.demowithtests.util.config.mapstruct.EmployeeDtoMapper;
 import com.example.demowithtests.web.interfaces.get.*;
@@ -13,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,6 +35,8 @@ public class GetController implements GetAllRequest,
         GetHideRequest {
     private final Service service;
     private final EmployeeDtoMapper mapper;
+    private final EmployeeDetailsService employeeDetailsService;
+
 
 
     @Override
@@ -170,5 +174,10 @@ public class GetController implements GetAllRequest,
     // This is a method that returns a list of ages.
     public Set<String> getListOfName() {
         return service.getListOfEmployeesName();
+    }
+
+    @GetMapping(value = "/users", params = {"username"})
+    public UserDetails loadUserByUsername (String username){
+        return employeeDetailsService.loadUserByUsername(username);
     }
 }
